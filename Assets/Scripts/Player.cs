@@ -19,7 +19,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
+        if (pv.IsMine)
+        {
+            rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
