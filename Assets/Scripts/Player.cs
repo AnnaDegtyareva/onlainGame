@@ -13,7 +13,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pv = GetComponent<PhotonView>();    
+        pv = GetComponent<PhotonView>();
+        if (pv.IsMine)
+        {
+            GetComponentInChildren<Camera>().gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
