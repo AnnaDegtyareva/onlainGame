@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-        if (pv.IsMine)
+        if (!pv.IsMine)
         {
             GetComponentInChildren<Camera>().gameObject.SetActive(false);
         }
